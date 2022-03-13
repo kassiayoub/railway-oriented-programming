@@ -20,14 +20,10 @@ public class Main {
     }
 
     public static void printResult(Result<Integer, String> result){
-        result.either(
-                success -> {
-                    System.out.println("value= " + success);
-                    return result;
-                },
-                failure -> {
-                    System.out.println("error= "+ failure);
-                    return result;
-                });
+        String msg = result.either(
+                success -> "value= " + success,
+                failure -> "error= " + failure
+        );
+        System.out.println(msg);
     }
 }
