@@ -19,8 +19,8 @@ public class Main {
         printResult(notAnInteger);
     }
 
-    public static void printResult(Result<Integer, String> result){
-        String msg = result.either(
+    public static void printResult(Result<Integer, String> potentialMessage){
+        String msg = potentialMessage.either(
                 success -> "value= " + success,
                 failure -> "error= " + failure
         );
